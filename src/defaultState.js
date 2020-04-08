@@ -29,7 +29,7 @@ export default {
     curriculum: {
       displayName: 'lessons',
       href: 'https://www.learnhowtoprogram.com/react',
-      displayText: 'teaches and writes'
+      displayText: 'curriculum'
     },
     epicodus: {
       displayName: 'Epicodus',
@@ -44,7 +44,7 @@ export default {
     linkedin: {
       displayName: 'linkedIn',
       href: 'https://www.linkedin.com/in/tylersuderman/',
-      displayText: 'work'
+      displayText: 'works'
     },
     email: {
       displayName: 'email',

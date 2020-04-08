@@ -16,9 +16,9 @@ const About = ({
     <div id="about" className="section-container">
       <style jsx>{`
         .section p {
-          font-family: 'Kosugi Maru', sans-serif;
+          font-family: "Kosugi Maru", sans-serif;
           font-size: 1.5rem;
-          font-size: calc(1.5rem + .25vw);
+          font-size: calc(1.5rem + 0.25vw);
           line-height: 2em;
           margin-bottom: 0;
         }
@@ -37,28 +37,32 @@ const About = ({
 
       <div className="section">
         <p>
-          A <Link link={text['web engineer']} highlight={highlight}/>
+          A <Link link={text["web engineer"]} highlight={highlight} />
         </p>
         <p className="tabbed">
-          who <Link link={text['teaches and writes']} highlight={highlight}/>
+          who <Link link={text["works"]} highlight={highlight} /> information
         </p>
-        <p className='tabbed'>
-          at <Link link={text['Epicodus.']} highlight={highlight}/>
+        <p className="tabbed">into exciting UI</p>
+        <div className="break"></div>
+        <p>Previously, I</p>
+        <p className="tabbed">
+          developed <Link link={text["curriculum"]} highlight={highlight} />
         </p>
-        <div className='break'></div>
+        <p className="tabbed">
+          at <Link link={text["Epicodus."]} highlight={highlight} />
+        </p>
+        <div className="break"></div>
         <p>On trails and in mountains</p>
-        <p className='tabbed'>
-          in my <Link link={text['spare time.']} highlight={highlight}/>
+        <p className="tabbed">
+          in my <Link link={text["spare time."]} highlight={highlight} />
         </p>
-        <div className='break'></div>
+        <div className="break"></div>
         <p>I care about communities</p>
-        <p className='tabbed'>
-          and <Link link={text['work']} highlight={highlight}/> to make mine
-        </p>
-        <p className='tabbed'>inclusive and productive.</p>
-        <div className='break'></div>
+        <p className="tabbed">and work to make mine</p>
+        <p className="tabbed">inclusive and productive.</p>
+        <div className="break"></div>
         <p>
-          <Link link={text["Let's connect!"]} highlight={highlight}/>
+          <Link link={text["Let's connect!"]} highlight={highlight} />
         </p>
       </div>
     </div>

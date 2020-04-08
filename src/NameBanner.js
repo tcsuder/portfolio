@@ -1,7 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-function NameBanner({ image, opacity, wideScreen }) {
+const NameBanner = ({
+  image, 
+  opacity, 
+  isWideScreen,
+}) => {
   return (
     <header id="banner" className="banner">
       <style jsx>{`
@@ -19,7 +23,7 @@ function NameBanner({ image, opacity, wideScreen }) {
           background: rgba(255,255,255,${opacity});
           color: rgba(0,0,0,1);
           font-size: 14em;
-          font-size: ${wideScreen ? `calc(10em + 10vw)`: `10em` };
+          font-size: ${isWideScreen ? `calc(10em + 10vw)`: `10em` };
           font-family: 'Amiko';
           letter-spacing: -.02em;
           line-height: .6em;
@@ -42,7 +46,7 @@ function NameBanner({ image, opacity, wideScreen }) {
 NameBanner.propTypes = {
   image: propTypes.string.isRequired,
   opacity: propTypes.number.isRequired,
-  wideScreen: propTypes.bool.isRequired
+  isWideScreen: propTypes.bool.isRequired,
 }
 
 export default NameBanner;

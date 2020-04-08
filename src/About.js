@@ -2,9 +2,11 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Link from './Link';
 
-function About({ links, highlight }) {
-
-  // here's a tricky block of code that just makes the link components below... maybe... a little easier to read.
+const About = ({ 
+  links, 
+  highlight 
+}) => {  
+  // object mutation makes the link components below a little more human readable
   const text = {};
   Object.keys(links).forEach((key) => {
     text[links[key].displayText] = links[key];

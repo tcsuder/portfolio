@@ -74,20 +74,26 @@ const getRandomImage = (imageList) => {
   return imageList[randomKey];
 };
 
-const setIsWideScreen = ({dispatch}) => {
+const getIsWideScreen = () => {
   // TODO: move to constants file with action types
   const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
     navigator.userAgent
   );
   const screenWidth = window.innerWidth;
+  return screenWidth < 550 || mobile ? false : true;
+}
+
+const setIsWideScreen = ({dispatch}) => {
   dispatch({
     type: actionTypes.SET_IS_WIDE_SCREEN,
-    isWideScreen: screenWidth < 550 || mobile ? false : true,
+    isWideScreen: getIsWideScreen(),
   });
 }
 
-const setDisplayImage = ({state, dispatch}) => {
-  const imageList = state.isWideScreen ? state.largeImageList : state.smallImageList;
+const setDisplayImage = ({state, dispatch}) => {  
+  const isWideScreen = getIsWideScreen();
+  console.log(isWideScreen);
+  const imageList = isWideScreen ? state.largeImageList : state.smallImageList;
   const displayImage = getRandomImage(imageList);
   dispatch({ type: actionTypes.SET_DISPLAY_IMAGE, imageList, displayImage });
 }

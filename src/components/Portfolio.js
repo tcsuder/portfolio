@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import NameBanner from './NameBanner';
 import About from './About';
 import LinkDescription from './LinkDescription';
-import defaultState from './defaultState';
+import defaultState from '../defaultState';
 
 // TODO: export this
 const actionTypes = {
@@ -92,7 +92,6 @@ const setIsWideScreen = ({dispatch}) => {
 
 const setDisplayImage = ({state, dispatch}) => {  
   const isWideScreen = getIsWideScreen();
-  console.log(isWideScreen);
   const imageList = isWideScreen ? state.largeImageList : state.smallImageList;
   const displayImage = getRandomImage(imageList);
   dispatch({ type: actionTypes.SET_DISPLAY_IMAGE, imageList, displayImage });
@@ -116,7 +115,7 @@ const setBannerOpacity = ({dispatch}) => {
 const shouldDisplayLinkDescription = ({ state }) =>
   !!state.highlightedLink && state.isWideScreen;
 
-const App = () => {
+const Portfolio = () => {
   const [state, dispatch] = useReducer(reducer, initialState(defaultState));
 
   useWindowEvent("scroll", () => {
@@ -135,15 +134,14 @@ const App = () => {
 
   return (
     <main>
-      <style global jsx>{`
+      <style global='true' jsx='true'>{`
         @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru");
         @font-face {
           font-family: "Amiko";
-          src: url(${require("./fonts/Amiko-Bold.eot")});
-          src: url(${require("./fonts/Amiko-Bold.eot?#iefix")})
-              format("embedded-opentype"),
-            url(${require("./fonts/Amiko-Bold.woff2")}) format("woff2"),
-            url(${require("./fonts/Amiko-Bold.woff")}) format("woff");
+          src: url(${require("../fonts/Amiko-Bold.eot")});
+          src:
+            url(${require("../fonts/Amiko-Bold.woff2")}) format("woff2"),
+            url(${require("../fonts/Amiko-Bold.woff")}) format("woff");
           font-weight: bold;
           font-style: normal;
         }
@@ -181,22 +179,24 @@ const App = () => {
       <NameBanner
         opacity={state.bannerOpacity}
         image={state.displayImage}
-        isWideScreen={state.isWideScreen} />
+        isWideScreen={state.isWideScreen}
+      />
 
-      {shouldDisplayLinkDescription({state}) && (
+      {shouldDisplayLinkDescription({ state }) && (
         <LinkDescription
           highlightedLink={state.highlightedLink}
-          image={state.displayImage} />
+          image={state.displayImage}
+        />
       )}
 
       <About
         links={state.linksByKey}
         highlight={(link) =>
           setHighlightedLink({ highlightedLink: link, dispatch })
-        } />
-
+        }
+      />
     </main>
   );
 }
 
-export default App;
+export default Portfolio;

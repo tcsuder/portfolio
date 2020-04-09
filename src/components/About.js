@@ -14,7 +14,7 @@ const About = ({
 
   return (
     <div id="about" className="section-container">
-      <style jsx>{`
+      <style jsx='true'>{`
         .section p {
           font-family: "Kosugi Maru", sans-serif;
           font-size: 1.5rem;
@@ -36,6 +36,9 @@ const About = ({
       `}</style>
 
       <div className="section">
+        {/* */}
+        {/* A web engineer */}
+        {/* who loves, information, community, */}
         <p>
           A <Link link={text["web engineer"]} highlight={highlight} />
         </p>
@@ -43,14 +46,6 @@ const About = ({
           who <Link link={text["works"]} highlight={highlight} /> information
         </p>
         <p className="tabbed">into exciting UI</p>
-        <div className="break"></div>
-        <p>Previously, I</p>
-        <p className="tabbed">
-          developed <Link link={text["curriculum"]} highlight={highlight} />
-        </p>
-        <p className="tabbed">
-          at <Link link={text["Epicodus."]} highlight={highlight} />
-        </p>
         <div className="break"></div>
         <p>On trails and in mountains</p>
         <p className="tabbed">

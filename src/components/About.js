@@ -14,9 +14,9 @@ const About = ({
 
   return (
     <div id="about" className="section-container">
-      <style jsx='true'>{`
+      <style jsx="true">{`
         .section p {
-          font-family: "Kosugi Maru", sans-serif;
+          font-family: "Work Sans", sans-serif;
           font-size: 1.5rem;
           font-size: calc(1.5rem + 0.25vw);
           line-height: 2em;
@@ -36,16 +36,11 @@ const About = ({
       `}</style>
 
       <div className="section">
-        {/* */}
-        {/* A web engineer */}
-        {/* who loves, information, community, */}
         <p>
           A <Link link={text["web engineer"]} highlight={highlight} />
         </p>
-        <p className="tabbed">
-          who <Link link={text["works"]} highlight={highlight} /> information
-        </p>
-        <p className="tabbed">into exciting UI</p>
+        <p className="tabbed">who loves creative teams</p>
+        <p className="tabbed">and beautiful UI</p>
         <div className="break"></div>
         <p>On trails and in mountains</p>
         <p className="tabbed">
@@ -53,7 +48,9 @@ const About = ({
         </p>
         <div className="break"></div>
         <p>I care about communities</p>
-        <p className="tabbed">and work to make mine</p>
+        <p className="tabbed">
+          and <Link link={text["work"]} highlight={highlight} /> to make mine
+        </p>
         <p className="tabbed">inclusive and productive.</p>
         <div className="break"></div>
         <p>

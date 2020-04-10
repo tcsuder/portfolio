@@ -44,7 +44,7 @@ export default {
     linkedin: {
       displayName: 'linkedIn',
       href: 'https://www.linkedin.com/in/tylersuderman/',
-      displayText: 'works'
+      displayText: 'work'
     },
     email: {
       displayName: 'email',

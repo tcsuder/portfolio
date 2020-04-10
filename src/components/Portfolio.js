@@ -134,13 +134,13 @@ const Portfolio = () => {
 
   return (
     <main>
-      <style global='true' jsx='true'>{`
-        @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru");
+      <style global="true" jsx="true">{`
+        @import url("https://fonts.googleapis.com/css2?family=Cabin");
+        @import url("https://fonts.googleapis.com/css2?family=Work+Sans");
         @font-face {
           font-family: "Amiko";
           src: url(${require("../fonts/Amiko-Bold.eot")});
-          src:
-            url(${require("../fonts/Amiko-Bold.woff2")}) format("woff2"),
+          src: url(${require("../fonts/Amiko-Bold.woff2")}) format("woff2"),
             url(${require("../fonts/Amiko-Bold.woff")}) format("woff");
           font-weight: bold;
           font-style: normal;

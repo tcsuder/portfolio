@@ -5,8 +5,8 @@
   "dependencies": {
     "font-face-observer": "^1.0.0",
     "material-ui": "^0.20.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-scripts": "^3.4.1",
     "styled-jsx": "^2.2.6"
   },

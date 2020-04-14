@@ -135,8 +135,7 @@ const Portfolio = () => {
   return (
     <main>
       <style global="true" jsx="true">{`
-        @import url("https://fonts.googleapis.com/css2?family=Cabin");
-        @import url("https://fonts.googleapis.com/css2?family=Work+Sans");
+        @import url("https://fonts.googleapis.com/css2?family=Oxygen");
         @font-face {
           font-family: "Amiko";
           src: url(${require("../fonts/Amiko-Bold.eot")});

@@ -9,7 +9,8 @@ const actionTypes = {
   SET_BANNER_OPACITY: 'SET_BANNER_OPACITY',
   SET_DISPLAY_IMAGE: 'SET_DISPLAY_IMAGE',
   SET_HIGHLIGHTED_LINK: 'SET_HIGHLIGHTED_LINK',
-  SET_IS_WIDE_SCREEN: 'SET_IS_WIDE_SCREEN',
+  SET_IS_MOBILE_DEVICE: 'SET_IS_MOBILE_DEVICE',
+  SET_IS_LIMITED_WIDTH_VIEW: 'SET_IS_LIMITED_WIDTH_VIEW',
 }
 
 // TODO: test reducer
@@ -34,11 +35,11 @@ function reducer(state, action) {
         ...state,
         highlightedLink,
       };
-    case actionTypes.SET_IS_WIDE_SCREEN:
-      const { isWideScreen } = action;
+    case actionTypes.SET_IS_LIMITED_WIDTH_VIEW:
+      const { isLimitedWidthView } = action;
       return {
         ...state,
-        isWideScreen,
+        isLimitedWidthView,
       };
     default:
       throw new Error();
@@ -60,7 +61,7 @@ const initialState = (defaultState) => {
     displayImage: defaultState.smallImageList['trail3mobile'],
     highlightedLink: '',
     imageList: defaultState.smallImageList,
-    isWideScreen: false,
+    isLimitedWidthView: true,
     largeImageList: defaultState.largeImageList,
     linksByKey: defaultState.linksByKey,
     smallImageList: defaultState.smallImageList,
@@ -74,25 +75,21 @@ const getRandomImage = (imageList) => {
   return imageList[randomKey];
 };
 
-const getIsWideScreen = () => {
-  // TODO: move to constants file with action types
-  const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-    navigator.userAgent
-  );
+const getIsLimitedWidthView = () => {
   const screenWidth = window.innerWidth;
-  return screenWidth < 400 || mobile ? false : true;
+  return screenWidth < 400;
 }
 
-const setIsWideScreen = ({dispatch}) => {
+const setIsLimitedWidthView = ({dispatch}) => {
   dispatch({
-    type: actionTypes.SET_IS_WIDE_SCREEN,
-    isWideScreen: getIsWideScreen(),
+    type: actionTypes.SET_IS_LIMITED_WIDTH_VIEW,
+    isLimitedWidthView: getIsLimitedWidthView(),
   });
 }
 
 const setDisplayImage = ({state, dispatch}) => {  
-  const isWideScreen = getIsWideScreen();
-  const imageList = isWideScreen ? state.largeImageList : state.smallImageList;
+  const isLimitedWidthView = getIsLimitedWidthView();
+  const imageList = isLimitedWidthView ? state.smallImageList : state.largeImageList;
   const displayImage = getRandomImage(imageList);
   dispatch({ type: actionTypes.SET_DISPLAY_IMAGE, imageList, displayImage });
 }
@@ -113,7 +110,7 @@ const setBannerOpacity = ({dispatch}) => {
 }
 
 const shouldDisplayLinkDescription = ({ state }) =>
-  !!state.highlightedLink && state.isWideScreen;
+  !!state.highlightedLink && !state.isLimitedWidthView;
 
 const Portfolio = () => {
   const [state, dispatch] = useReducer(reducer, initialState(defaultState));
@@ -123,12 +120,12 @@ const Portfolio = () => {
   });
 
   useWindowEvent('resize', () => {
-    setIsWideScreen({ dispatch });
+    setIsLimitedWidthView({ dispatch });
   });
 
   useEffect(() => {
     document.title = "TYLER SUDERMAN";
-    setIsWideScreen({ dispatch });
+    setIsLimitedWidthView({ dispatch });
     setDisplayImage({ dispatch, state });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -177,7 +174,7 @@ const Portfolio = () => {
       <NameBanner
         opacity={state.bannerOpacity}
         image={state.displayImage}
-        isWideScreen={state.isWideScreen}
+        isLimitedWidthView={state.isLimitedWidthView}
       />
 
       {shouldDisplayLinkDescription({ state }) && (

@@ -3,8 +3,8 @@ import propTypes from 'prop-types';
 
 const NameBanner = ({
   image, 
+  isLimitedWidthView,
   opacity, 
-  isWideScreen,
 }) => {
   return (
     <header id="banner" className="banner">
@@ -19,15 +19,14 @@ const NameBanner = ({
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          height: 580px;
-          height: calc(500px + 10vw);
+          height: ${!isLimitedWidthView ? `calc(500px + 10vw);` : `375px`};
           overflow: hidden;
         }
         h1.title {
           background: rgba(255, 255, 255, ${opacity});
           color: rgba(0, 0, 0, 1);
           font-size: 14em;
-          font-size: ${isWideScreen ? `calc(10em + 10vw)` : `10em`};
+          font-size: ${!isLimitedWidthView ? `calc(9em + 10vw)` : `8em`};
           font-family: "Amiko";
           letter-spacing: -0.02em;
           line-height: 0.65em;
@@ -37,7 +36,7 @@ const NameBanner = ({
           transition: 0.5s;
         }
         span.last-name {
-          font-size: 0.666em;
+          font-size: ${!isLimitedWidthView ? `calc(.7em - 1vw)` : `.5em`};
         }
       `}</style>
       <h1 id="title" className="title">
@@ -51,8 +50,8 @@ const NameBanner = ({
 
 NameBanner.propTypes = {
   image: propTypes.string.isRequired,
+  isLimitedWidthView: propTypes.bool.isRequired,
   opacity: propTypes.number.isRequired,
-  isWideScreen: propTypes.bool.isRequired,
 }
 
 export default NameBanner;

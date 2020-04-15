@@ -80,7 +80,7 @@ const getIsWideScreen = () => {
     navigator.userAgent
   );
   const screenWidth = window.innerWidth;
-  return screenWidth < 550 || mobile ? false : true;
+  return screenWidth < 400 || mobile ? false : true;
 }
 
 const setIsWideScreen = ({dispatch}) => {
@@ -147,7 +147,7 @@ const Portfolio = () => {
         body {
           font-family: "Amiko", sans-serif;
           color: rgb(10, 20, 30);
-          min-width: 500px;
+          min-width: 320px;
           margin: 0;
           padding: 0;
         }
@@ -161,13 +161,12 @@ const Portfolio = () => {
         }
         .section-container {
           max-width: 1200px;
-          min-width: 500px;
+          min-width: 320px;
           margin: 0 auto;
-          min-height: 500px;
           width: 70%;
         }
         .section {
-          min-width: 480px;
+          min-width: 300px;
           padding-left: 20px;
           padding-top: calc(100px + 5vw);
           padding-bottom: calc(100px + 5vw);

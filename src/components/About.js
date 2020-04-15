@@ -40,7 +40,7 @@ const About = ({
           A <Link link={text["web engineer"]} highlight={highlight} />
         </p>
         <p className="tabbed">who loves creative teams</p>
-        <p className="tabbed">and beautiful UI</p>
+        <p className="tabbed">and beautiful UI.</p>
         <div className="break"></div>
         <p>On trails and in mountains</p>
         <p className="tabbed">

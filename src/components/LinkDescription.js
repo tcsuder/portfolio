@@ -8,7 +8,7 @@ const LinkDescription = ({
   <div>
     <style jsx>{`
       #display-link {
-        background: linear-gradient(rgba(251,222,222,.4), rgba(10,20,30,.9)), url(${image});
+        background: linear-gradient(rgba(251,222,222,.65), rgba(10,20,30,.9)), url(${image});
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -35,7 +35,7 @@ const LinkDescription = ({
       #display-link li h1 {
         font-size: 7rem;
         font-size: calc(6rem + 3vw);
-        font-family: "Oxygen", sans-serif;
+        font-family: "Karla", sans-serif;
         line-height: .75em;
         margin: 0;
       }

@@ -16,7 +16,7 @@ const About = ({
     <div id="about" className="section-container">
       <style jsx="true">{`
         .section p {
-          font-family: "Oxygen", sans-serif;
+          font-family: "Karla", sans-serif;
           font-size: 1.5rem;
           font-size: calc(1.5rem + 0.25vw);
           line-height: 2em;

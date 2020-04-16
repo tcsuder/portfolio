@@ -11,7 +11,7 @@ const NameBanner = ({
       <style jsx='true'>{`
         header.banner {
           background: linear-gradient(
-              rgba(251, 222, 222, 0.4),
+              rgba(251, 222, 222, 0.65),
               rgba(10, 20, 30, 0.9)
             ),
             url(${image});

@@ -165,7 +165,7 @@ const Portfolio = () => {
         .section {
           min-width: 300px;
           padding-left: 20px;
-          padding-top: calc(100px + 5vw);
+          padding-top: calc(50px + 5vw);
           padding-bottom: calc(100px + 5vw);
           width: 50vw;
         }

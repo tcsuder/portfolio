@@ -19,7 +19,7 @@ const NameBanner = ({
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          height: ${!isLimitedWidthView ? `calc(500px + 10vw);` : `375px`};
+          height: ${!isLimitedWidthView ? `calc(500px + 7vw);` : `375px`};
           overflow: hidden;
         }
         h1.title {
@@ -32,7 +32,7 @@ const NameBanner = ({
           line-height: 0.65em;
           margin: 0;
           mix-blend-mode: screen;
-          padding-top: 150px;
+          padding-top: 100px;
           transition: 0.5s;
         }
         span.last-name {

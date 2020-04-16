@@ -35,7 +35,7 @@ const LinkDescription = ({
       #display-link li h1 {
         font-size: 7rem;
         font-size: calc(6rem + 3vw);
-        font-family: "Karla", sans-serif;
+        font-family: "Oxygen", sans-serif;
         line-height: .75em;
         margin: 0;
       }

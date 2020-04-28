@@ -1,22 +1,19 @@
-import React from 'react';
-import propTypes from 'prop-types';
-import Link from './Link';
+import React from 'react'
+import propTypes from 'prop-types'
+import Link from './Link'
 
-const About = ({ 
-  links, 
-  highlight 
-}) => {  
+const About = ({ links, highlight }) => {
   // object mutation makes the link components below a little more human readable
-  const text = {};
+  const text = {}
   Object.keys(links).forEach((key) => {
-    text[links[key].displayText] = links[key];
-  });
+    text[links[key].displayText] = links[key]
+  })
 
   return (
     <div id="about" className="section-container">
       <style jsx="true">{`
         .section p {
-          font-family: "Oxygen", sans-serif;
+          font-family: 'Oxygen', sans-serif;
           font-size: 1.5rem;
           font-size: calc(1.5rem + 0.25vw);
           line-height: 2em;
@@ -37,19 +34,19 @@ const About = ({
 
       <div className="section">
         <p>
-          A <Link link={text["web engineer"]} highlight={highlight} />
+          A <Link link={text['web engineer']} highlight={highlight} />
         </p>
         <p className="tabbed">who loves creative teams</p>
         <p className="tabbed">and beautiful UI.</p>
         <div className="break"></div>
         <p>On trails and in mountains</p>
         <p className="tabbed">
-          in my <Link link={text["spare time."]} highlight={highlight} />
+          in my <Link link={text['spare time.']} highlight={highlight} />
         </p>
         <div className="break"></div>
         <p>I care about communities</p>
         <p className="tabbed">
-          and <Link link={text["work"]} highlight={highlight} /> to make mine
+          and <Link link={text['work']} highlight={highlight} /> to make mine
         </p>
         <p className="tabbed">inclusive and productive.</p>
         <div className="break"></div>
@@ -58,12 +55,12 @@ const About = ({
         </p>
       </div>
     </div>
-  );
+  )
 }
 
 About.propTypes = {
   links: propTypes.object.isRequired,
-  highlight: propTypes.func.isRequired
+  highlight: propTypes.func.isRequired,
 }
 
-export default About;
+export default About

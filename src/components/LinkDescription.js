@@ -1,14 +1,15 @@
-import React from 'react';
-import propTypes from 'prop-types';
+import React from 'react'
+import propTypes from 'prop-types'
 
-const LinkDescription = ({
-  highlightedLink,
-  image,
-}) => (
+const LinkDescription = ({ highlightedLink, image }) => (
   <div>
     <style jsx>{`
       #display-link {
-        background: linear-gradient(rgba(251,222,222,.65), rgba(10,20,30,.9)), url(${image});
+        background: linear-gradient(
+            rgba(255, 197, 71, 0.65),
+            rgba(255, 197, 71, 0.9)
+          ),
+          url(${image});
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -35,12 +36,12 @@ const LinkDescription = ({
       #display-link li h1 {
         font-size: 7rem;
         font-size: calc(6rem + 3vw);
-        font-family: "Oxygen", sans-serif;
-        line-height: .75em;
+        font-family: 'Oxygen', sans-serif;
+        line-height: 0.75em;
         margin: 0;
       }
       pre {
-        color: rgb(10,20,30);
+        color: rgb(10, 20, 30);
         color: white;
         font-family: 'Amiko', sans-serif;
         margin: 0;
@@ -51,18 +52,20 @@ const LinkDescription = ({
         {highlightedLink.split('').map((char, i) => {
           return (
             <li key={i}>
-              <h1><pre>{char.toUpperCase()}</pre></h1>
+              <h1>
+                <pre>{char.toUpperCase()}</pre>
+              </h1>
             </li>
           )
         })}
       </ul>
     </div>
   </div>
-);
+)
 
 LinkDescription.propTypes = {
   highlightedLink: propTypes.string.isRequired,
   image: propTypes.string.isRequired,
 }
 
-export default LinkDescription;
+export default LinkDescription
